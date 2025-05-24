@@ -29,7 +29,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-            <form>
+            <form method="POST" action="./actions/adicionar.php" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="foto" class="form-label">Foto do Candidato</label>
                     <input class="form-control" type="file" id="foto" name="foto">
@@ -42,12 +42,13 @@
                     <label for="partido" class="form-label">Partido do Candidato</label>
                     <input type="text" class="form-control" id="partido" name="partido">
                 </div>
-                </form>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
                 <button type="submit" class="btn btn-primary">Adicionar</button>
             </div>
+            </form>
             </div>
         </div>
         </div>

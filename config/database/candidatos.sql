@@ -1,5 +1,5 @@
 CREATE TABLE candidatos (
-    ID INT PRIMARY KEY,
+    ID INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     foto VARCHAR(255),
     nome VARCHAR(255),
     partido VARCHAR(255),
