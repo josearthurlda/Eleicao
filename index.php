@@ -55,45 +55,26 @@
         
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             <!-- Candidato 1 -->
+        <?php
+
+        $sql = "SELECT * FROM candidatos ORDER BY id"; 
+        $rows = $con->query($sql);
+        if($rows->num_rows > 0){
+            while($row = $rows->fetch_assoc()){
+            echo '
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/150" alt="Candidato 1" class="w-full h-48 object-cover">
+                <img src="'.$row['foto'].'" alt="'.$row['nome'].'" class="w-full h-48 object-cover">
                 <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">Nome do Candidato 1</h2>
-                    <p class="text-gray-700 mb-1">Partido: Partido 1</p>
-                    <p class="text-gray-700 mb-1">Votos: 5000</p>
+                    <h2 class="text-xl font-bold mb-2">'.$row['nome'].'</h2>
+                    <p class="text-gray-700 mb-1">Partido: '.$row['partido'].'</p>
+                    <p class="text-gray-700 mb-1">Votos: '.$row['votos'].'</p>
                     <p class="text-gray-700 mb-4">Data da Eleição: 01/01/2024</p>
                 </div>
             </div>
-            <!-- Candidato 2 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/150" alt="Candidato 2" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">Nome do Candidato 2</h2>
-                    <p class="text-gray-700 mb-1">Partido: Partido 2</p>
-                    <p class="text-gray-700 mb-1">Votos: 3000</p>
-                    <p class="text-gray-700 mb-4">Data da Eleição: 01/01/2024</p>
-                </div>
-            </div>
-            <!-- Candidato 3 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/150" alt="Candidato 3" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">Nome do Candidato 3</h2>
-                    <p class="text-gray-700 mb-1">Partido: Partido 3</p>
-                    <p class="text-gray-700 mb-1">Votos: 7000</p>
-                    <p class="text-gray-700 mb-4">Data da Eleição: 01/01/2024</p>
-                </div>
-            </div>
-            <!-- Candidato 4 -->
-            <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                <img src="https://via.placeholder.com/150" alt="Candidato 4" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="text-xl font-bold mb-2">Nome do Candidato 4</h2>
-                    <p class="text-gray-700 mb-1">Partido: Partido 4</p>
-                    <p class="text-gray-700 mb-1">Votos: 4500</p>
-                    <p class="text-gray-700 mb-4">Data da Eleição: 01/01/2024</p>
-                </div>
-            </div>
+            ';
+            }
+        }
+        ?>
         </div>
     </div>
 </body>
