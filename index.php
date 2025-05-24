@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Candidatos</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <?php
         require_once "./config/database/database.php";
     ?>
@@ -64,12 +66,21 @@
             echo '
             <div class="bg-white rounded-lg shadow-md overflow-hidden">
                 <img src="'.$row['foto'].'" alt="'.$row['nome'].'" class="w-full h-48 object-cover">
-                <div class="p-4">
+                <div class="p-4 pb-1">
                     <h2 class="text-xl font-bold mb-2">'.$row['nome'].'</h2>
                     <p class="text-gray-700 mb-1">Partido: '.$row['partido'].'</p>
                     <p class="text-gray-700 mb-1">Votos: '.$row['votos'].'</p>
-                    <p class="text-gray-700 mb-4">Data da Eleição: 01/01/2024</p>
+                    <p class="text-gray-700">Data da Eleição: 01/01/2024</p>
                 </div>
+                <a class="btn btn-danger ml-5 mb-3" href="actions/deletar.php?id='.$row['ID'].'">
+                  <i class="bi bi-trash"></i>
+                  Deletar
+                </a>
+
+                <a class="btn btn-primary mb-3" href="actions/editar.php?id='.$row['ID'].'">
+                  <i class="bi bi-eye"></i>
+                  Editar
+                </a>
             </div>
             ';
             }
