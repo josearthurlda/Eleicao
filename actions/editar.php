@@ -1,11 +1,11 @@
 <?php
-include_once("././config/database/database.php");
+include_once ("../config/database/database.php");
 
 if($_SERVER['REQUEST_METHOD'] == "POST"){
     $nome = $_POST['nome'];
     $partido = $_POST['partido'];
-    move_uploaded_file($_FILES["foto"]["tmp_name"], "././Imagens/" . $nome . ".png");
-    $foto = "./Imagens/" . $nome . ".png";
+    move_uploaded_file($_FILES["foto"]["tmp_name"], "../Imagens/" . $nome . ".png");
+    $foto = "../Imagens/" . $nome . ".png";
 
     $sql = "UPDATE candidatos SET nome='$nome', partido='$partido', foto='$foto' WHERE id = ".$_GET['id'];
 

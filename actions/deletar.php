@@ -1,5 +1,5 @@
 <?php
-    include_once(".\.\config\database\database.php");
+    include_once ("../config/database/database.php");
 
     $id = $_GET['id'];
     $sql = "DELETE FROM candidatos WHERE id = $id";
