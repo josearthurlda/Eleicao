@@ -3,5 +3,5 @@ CREATE TABLE candidatos (
     foto VARCHAR(255),
     nome VARCHAR(255),
     partido VARCHAR(255),
-    votos INT
+    votos INT DEFAULT 0
 )
