@@ -81,8 +81,8 @@
                   Deletar
                 </a>
 
-                <a class="btn btn-primary mb-3" href="actions/editar.php?id='.$row['ID'].'">
-                  <i class="bi bi-eye"></i>
+                <a class="btn btn-primary mb-3" href="actions/salvar.php?id='.$row['ID'].'">
+                  <i class="bi bi-box-arrow-in-down"></i>
                   Editar
                 </a>
             </div>
